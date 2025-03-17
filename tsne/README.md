@@ -79,9 +79,7 @@ for i in range(self.max_iter):
 ---
 
 ## **📊 PCA vs t-SNE Visualization**
-This comparison shows **PCA vs t-SNE** applied to **high-dimensional multimodal data**.
-
-![./assets/pca.png](./assets/pca.png)
+This comparison shows **PCA vs t-SNE vs  SKLearn-t-SNE**
 ![./assets/pca.png](./assets/tsne.png)
 
 ---
@@ -91,7 +89,13 @@ This comparison shows **PCA vs t-SNE** applied to **high-dimensional multimodal 
 ✅ **Vectorized Updates:** Uses **jax.numpy** for parallel operations.  
 ✅ **GPU Support:** Runs seamlessly on **TPUs and CUDA GPUs**.  
 
----
+#### **Performance Gains**
+
+| Method              | Execution Time (seconds) | Speedup |
+|---------------------|------------------------|---------|
+| **JAX t-SNE (ours)**  | **0.145 s**            | **~10.3x faster** |
+| Scikit-learn t-SNE  | **1.49 s**              | -       |
+
 
 ## **🔧 TODO & Improvements**
 - 🔲 Support **t-SNE with early exaggeration phase**.  
