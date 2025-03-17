@@ -3,7 +3,6 @@ import tqdm
 
 import jax
 import jax.numpy as jnp
-from jax.scipy.special import logsumexp
 
 
 class MLP:
