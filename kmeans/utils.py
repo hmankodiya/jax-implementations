@@ -56,7 +56,7 @@ def multimodal_random_generator(
 
     samples = selected_means + selected_scales * noise
 
-    return samples, cluster_assignments
+    return samples, means, cluster_assignments
 
 
 def plot_features(data, clusters=None, centroids=None, title="Clusters"):

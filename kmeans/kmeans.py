@@ -4,7 +4,7 @@ import jax.numpy as jnp
 
 
 class KMeans:
-    def __init__(self, x, n_clusters=8, init="auto", max_iter=300, tol=1e-4, seed=42):
+    def __init__(self, x, centroids=None, n_clusters=8, init="auto", max_iter=300, tol=1e-4, seed=42):
         self.key = jax.random.PRNGKey(seed=seed)
         self.n_samples, self.input_dims = x.shape
         self.n_clusters = n_clusters
@@ -13,7 +13,7 @@ class KMeans:
         self.tol = tol
 
         self.x = x
-        self.centroids = self.init_centroids()
+        self.centroids = self.init_centroids() if centroids is None else centroids
 
     def init_centroids(self):
         if self.init == "kmeans++":
