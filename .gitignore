@@ -1,5 +1,9 @@
 # 
+data/
+mnist*/
 */rough.ipynb
+*/rough.py
+./rough.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

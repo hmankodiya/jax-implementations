@@ -59,7 +59,7 @@ def inference(model, x):
     return jax.vmap(model)(x)
 
 
-if __name__ == "__init__":
+if __name__ == "__main__":
     key = jax.random.PRNGKey(42)
     dataset_size = 100
     spread = 0
@@ -75,5 +75,6 @@ if __name__ == "__init__":
 
     model = SimpleLinearRegression(1, 1, rngs=nnx.Rngs(42))
 
-    loss = train_loop(model, dataloader, epochs=100)
+    loss = train_loop(model, dataloader, epochs=100000)
+    print(jnp.stack(loss).mean())
     plt.plot(loss)
